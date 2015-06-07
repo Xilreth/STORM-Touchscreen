@@ -27,8 +27,6 @@ session_start();
 
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
-	print_r($_POST);
-
 	if(isset($_POST['user_id'], $_POST['user_password'])){
 
 		$user = $_POST['user_id'];
@@ -40,8 +38,6 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 		$query = mysql_query("SELECT Pin FROM Users WHERE User_id='" . $user . "'");
 		
 		while($row = mysql_fetch_array($query)){
-			
-			print_r("test");
 			
 			if($row["Pin"] == $pass){
 				
@@ -265,7 +261,7 @@ $(document).ready(function(){
 	<div class="col-md-2"></div>
 	<div class="col-md-2" id="orderCol">
 	<button  class="btn btn-primary btn-lg" style="width:100%">Bestelling</button>
-	<button class="btn btn-primary btn-lg order lijst" totalOrder="0" style="position:absolute; bottom:40px" id="order">Total: </button>
+	<button class="btn btn-primary btn-lg order lijst" totalOrder="0" style="position:absolute; bottom:80px" id="order">Total: </button>
 	</div>
 </div>
 
