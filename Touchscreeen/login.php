@@ -34,7 +34,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 		$user = $_POST['user_id'];
 		$pass = $_POST['user_password'];
 		
-		$conn=mysql_connect("localhost","root","STORMIsThePlaceToBe!");
+		$conn=mysql_connect("darlek.int.storm.vu","root","STORMIsThePlaceToBe!");
 		mysql_select_db("touchdev");
 		
 		$query = mysql_query("SELECT Pin FROM Users WHERE User_id='" . $user . "'");
