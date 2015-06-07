@@ -64,7 +64,7 @@
       <input class="search lijst" placeholder="Search" /> 
 	  
 	  <?php
-            $conn=mysql_connect("darlek.int.storm.vu","root","STORMIsThePlaceToBe!");
+            $conn=mysql_connect("","","");
             // Check connection
             if (mysqli_connect_errno())
               {
@@ -140,7 +140,7 @@ $(document).ready(function(){
         <div class="modal-content">
           <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal">
-            <span aria-hidden="true">×</span> 
+            <span aria-hidden="true">Ã—</span> 
             <span class="sr-only">Close</span></button>
             <h4 class="modal-title" id="pincodepadlabel">Pincode</h4>
           </div>
@@ -164,7 +164,7 @@ $(document).ready(function(){
         <div class="modal-content">
           <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal">
-            <span aria-hidden="true">×</span> 
+            <span aria-hidden="true">Ã—</span> 
             <span class="sr-only">Close</span></button>
             <h4 class="modal-title">Agenda</h4>
           </div>
