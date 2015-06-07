@@ -1,4 +1,2 @@
 # STORM-Touchscreen
 
-
-KANKERHOER
