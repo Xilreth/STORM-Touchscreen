@@ -64,7 +64,7 @@
       <input class="search lijst" placeholder="Search" /> 
 	  
 	  <?php
-            $conn=mysql_connect("darlek.int.storm.vu","rescue","STORMIsThePlaceToBe!");
+            $conn=mysql_connect("darlek.int.storm.vu","root","STORMIsThePlaceToBe!");
             // Check connection
             if (mysqli_connect_errno())
               {
