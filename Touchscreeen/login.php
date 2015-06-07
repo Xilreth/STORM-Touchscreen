@@ -259,7 +259,7 @@ $(document).ready(function(){
 	
 	</div>
 	<div class="col-md-2"></div>
-	<div class="col-md-2" id="orderCol">
+	<div class="col-md-2" id="orderCol" style="right:80px">
 	<button  class="btn btn-primary btn-lg" style="width:100%">Bestelling</button>
 	<button class="btn btn-primary btn-lg order lijst" totalOrder="0" style="position:absolute; bottom:80px" id="order">Total: </button>
 	</div>
