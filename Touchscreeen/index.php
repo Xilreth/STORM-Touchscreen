@@ -61,8 +61,10 @@
 </style>
     <div class="col-md-6" style="overflow:scroll; height:100%">
       <div id="users">
-      <input class="search lijst" placeholder="Search" /> <?php
-            $conn=mysql_connect("localhost","root","STORMIsThePlaceToBe!");
+      <input class="search lijst" placeholder="Search" /> 
+	  
+	  <?php
+            $conn=mysql_connect("darlek.int.storm.vu","rescue","STORMIsThePlaceToBe!");
             // Check connection
             if (mysqli_connect_errno())
               {
