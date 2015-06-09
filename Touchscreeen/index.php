@@ -71,7 +71,7 @@
               echo "Failed to connect to MySQL: " . mysqli_connect_error();
               }
               else {
-              echo "Connection Succesfull </br>";
+              //echo "Connection Succesfull </br>";
               }
             // Perform queries 
             mysql_select_db("touchdev");
@@ -81,7 +81,7 @@
 			
 			//$query = mysql_query("SELECT User_ID, First_Name, Last_Name, Balance FROM Users WHERE possibleloginname LIKE '%" . inputvalue . "%'");
 
-            echo "The table currently contains " . mysql_num_rows($query) . " row(s) </br>";
+            //echo "The table currently contains " . mysql_num_rows($query) . " row(s) </br>";
 
             while($row = mysql_fetch_array($query)){
                 echo "<button class='btn btn-default lijst' data-toggle='modal' id='user' User_ID='" . $row["User_ID"] . "' data-target='#pincodepad'>" . $row["First_Name"] . " " . $row["Last_Name"] . " " . $row["Balance"] . "</button>";
@@ -100,6 +100,7 @@ $(document).ready(function(){
         });
 });
 
+function idnum(id) { return document.getElementById(id); }
 </script>
     <div class="col-md-6">
       <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
@@ -140,22 +141,33 @@ $(document).ready(function(){
         <div class="modal-content">
           <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal">
-            <span aria-hidden="true">×</span> 
+            <span aria-hidden="true">�</span> 
             <span class="sr-only">Close</span></button>
             <h4 class="modal-title" id="pincodepadlabel">Pincode</h4>
           </div>
-          <div class="modal-body" id="modalbody">
-            <div id="pincontainer">
-              <form method="post" action="login.php" id="login_form">
-              <input type="hidden" id="user_id" name="user_id" value="" /> 
-              <input type="password" class="form-control" id="user_password" name="user_password"
-              placeholder="&lt;Insert pincode here&gt;" /> 
-              <input type="submit" value="OK" /></form>
-            </div>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-default" data-dismiss="modal">Annuleren</button>
-          </div>
+		  <div class="modal-body" id="modalbody">
+			<form method="post" action="login.php" id="login_form">
+				<input type="hidden" id="user_id" name="user_id" value="" /> 
+				<input type="password" class="form-control" id="user_pwd" name="user_pwd" placeholder="&lt;Insert pincode here&gt;" />  
+				<div id="keypad" align="center">
+					<input type="button" class="btn btn-lg" value="1" onclick="idnum('user_pwd').value+=1;"/>
+					<input type="button" class="btn btn-lg" value="2" onclick="idnum('user_pwd').value+=2;"/>
+					<input type="button" class="btn btn-lg" value="3" onclick="idnum('user_pwd').value+=3;"/><br/>
+					<input type="button" class="btn btn-lg" value="4" onclick="idnum('user_pwd').value+=4;"/>
+					<input type="button" class="btn btn-lg" value="5" onclick="idnum('user_pwd').value+=5;"/>
+					<input type="button" class="btn btn-lg" value="6" onclick="idnum('user_pwd').value+=6;"/><br/>
+					<input type="button" class="btn btn-lg" value="7" onclick="idnum('user_pwd').value+=7;"/>
+					<input type="button" class="btn btn-lg" value="8" onclick="idnum('user_pwd').value+=8;"/>
+					<input type="button" class="btn btn-lg" value="9" onclick="idnum('user_pwd').value+=9;"/><br/>
+					<input type="button" class="btn btn-lg" value="X" onclick="idnum('user_pwd').value=null"/>
+					<input type="button" class="btn btn-lg" value="0" onclick="idnum('user_pwd').value+=0;"/>
+					<input type="button" class="btn btn-lg" value="&larr;" onclick="idnum('user_pwd').value=idnum('user_pwd').value.substr(0,idnum('user_pwd').value.length-1);"/>
+				</div>
+				<div id="submit" align="center">
+					<input type="submit" class="btn btn-lg" value="OK"/>
+					<input type="button" class="btn btn-lg" data-dismiss="modal" value="Annuleren"/>
+				</div>
+			</form>
         </div>
       </div>
     </div>
@@ -164,7 +176,7 @@ $(document).ready(function(){
         <div class="modal-content">
           <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal">
-            <span aria-hidden="true">×</span> 
+            <span aria-hidden="true">�</span> 
             <span class="sr-only">Close</span></button>
             <h4 class="modal-title">Agenda</h4>
           </div>

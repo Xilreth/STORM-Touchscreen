@@ -27,10 +27,10 @@ session_start();
 
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
-	if(isset($_POST['user_id'], $_POST['user_password'])){
+	if(isset($_POST['user_id'], $_POST['user_pwd'])){
 
 		$user = $_POST['user_id'];
-		$pass = $_POST['user_password'];
+		$pass = $_POST['user_pwd'];
 		
 		$conn=mysql_connect("","","");
 		mysql_select_db("touchdev");
